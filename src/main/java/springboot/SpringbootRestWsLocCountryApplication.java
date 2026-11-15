@@ -1,4 +1,4 @@
-package io.github.ofcleos.springboot_rest_ws_loc_country;
+package springboot;
 
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;

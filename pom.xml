@@ -8,10 +8,10 @@
 		<version>4.1.2</version>
 		<relativePath/> <!-- lookup parent from repository -->
 	</parent>
-	<groupId>io.github.ofcleos</groupId>
+	<groupId>springboot</groupId>
 	<artifactId>springboot-rest_ws-loc_country</artifactId>
 	<version>0.0.1-SNAPSHOT</version>
-	<name>springboot-rest_ws-loc_country</name>
+	<name/>
 	<description/>
 	<url/>
 	<licenses>
@@ -27,7 +27,7 @@
 		<url/>
 	</scm>
 	<properties>
-		<java.version>25</java.version>
+		<java.version>17</java.version>
 	</properties>
 	<dependencies>
 		<dependency>
