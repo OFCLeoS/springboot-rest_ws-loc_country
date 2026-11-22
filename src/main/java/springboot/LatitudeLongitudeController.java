@@ -1,6 +1,7 @@
 package springboot;
 
 import org.springframework.http.HttpStatus;
+import org.springframework.http.MediaType;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RequestParam;
@@ -31,8 +32,8 @@ public class LatitudeLongitudeController {
         if (addressObject == null) {
             throw new ResponseStatusException(HttpStatus.BAD_GATEWAY, "Address could not be obtained");
         }
-        String response = "200 OK: Country: " + addressObject.country + ".\nCountry Code: "
-                + addressObject.country_code;
-        return ResponseEntity.ok(response);
+        String response = "Status Code:\n- 200 OK\nResponse:\n---------\n- Country\n   - " + addressObject.country + "\n- Country Code\n   - "
+                + addressObject.country_code+"\n---------";
+        return ResponseEntity.ok().contentType(MediaType.TEXT_MARKDOWN).body(response);
     }
 }
