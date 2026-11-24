@@ -1,0 +1,25 @@
+apiVersion: apps/v1
+kind: Deployment
+
+metadata:
+  name: country-grabber
+
+spec:
+  replicas: 2
+
+  selector:
+    matchLabels:
+      app: country-grabber
+
+  template:
+    metadata:
+      labels:
+        app: country-grabber
+
+    spec:
+      containers:
+        - name: country-grabber
+          image: country-grabber:latest
+          imagePullPolicy: Never
+          ports:
+            - containerPort: 8080

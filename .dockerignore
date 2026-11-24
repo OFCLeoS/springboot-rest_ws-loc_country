@@ -1,0 +1,13 @@
+# Will use this to ignore files that are not supposed to be copied
+.git/
+.vscode/
+Documentation/
+src/test/
+.gitignore
+.gitattributes
+.mvn/
+target/
+HELP.md
+mvnw
+mvnw.cmd
+README.md
