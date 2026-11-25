@@ -13,9 +13,6 @@ import jakarta.validation.constraints.Min;
 
 @RestController
 public class LatitudeLongitudeController {
-
-    private final String latErrorMsg = "lat must be between -90 and 90.";
-    private final String lonErrorMsg = "lon must be between -180 and 180.";
     private final NominatimService nominatimService;
 
     public LatitudeLongitudeController(NominatimService nominatimService) {
@@ -24,8 +21,8 @@ public class LatitudeLongitudeController {
 
     @GetMapping
     public ResponseEntity<String> getContryFromLatLong(
-            @RequestParam(required = true) @Min(value = -90, message = latErrorMsg) @Max(value = 90, message = latErrorMsg) float lat,
-            @RequestParam(required = true) @Min(value = -180, message = lonErrorMsg) @Max(value = 180, message = lonErrorMsg) float lon) {
+            @RequestParam(required = true) @Min(value = -90) @Max(value = 90) float lat,
+            @RequestParam(required = true) @Min(value = -180) @Max(value = 180) float lon) {
         Address addressObject = nominatimService.getCountryAndCodeFromLatLong(lat, lon);
         // If the address object is null, it is an external API issue, and
         // we will return 502 Bad Gateway, as per the specificiations

@@ -7,7 +7,6 @@ src/test/
 .gitattributes
 .mvn/
 target/
-HELP.md
 mvnw
 mvnw.cmd
 README.md

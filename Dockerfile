@@ -1,3 +1,4 @@
+# --- BUILDER ---
 # Used this build due to maven, as well as Java 17
 FROM maven:3.10.2-eclipse-temurin-17 AS builder
 
@@ -11,7 +12,8 @@ COPY src ./src
 # We run this inside the program dir
 RUN mvn clean package
 
-
+# --- RUNNING APP ---
+# I found this java environment, which only produces an image of around 72MB
 FROM gcr.io/distroless/java17-debian13 AS prod
 
 WORKDIR /program
